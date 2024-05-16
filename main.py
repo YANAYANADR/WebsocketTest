@@ -10,7 +10,7 @@ templates=Jinja2Templates(directory="templates")
 @app.get('/',response_class=HTMLResponse)
 async def main_page(request:Request):
     return templates.TemplateResponse(
-        request=request,name="temp"
+        request=request,name="temp",context={"testVar":'this is a test thing'}
     )
 
 @app.websocket("/ws")
